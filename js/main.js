@@ -3,10 +3,11 @@
     let currentWeather = {};
     let list = $('#list');
     let cityField = $('#cityField');
+    let resetBtn = $('#reset');
 
-    function gettingJSON(city) {
+    gettingJSON = (city) => {
 
-        $.getJSON(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${ApiKey}&units=metric`, function (json) {
+        $.getJSON(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${ApiKey}&units=metric`, (json) => {
             currentWeather.city = json.name;
             currentWeather.country = json.sys.country;
             currentWeather.tmp = json.main.temp;
@@ -14,18 +15,23 @@
 
             addItem(currentWeather, list)
         });
-    }
+    };
 
-    function addItem(data, parent) {
-        let pattern = `<li>${data.city}, ${data.country} ${data.tmp.toFixed(1)}°C, ${data.description}</li>`;
+    addItem = (data, parent) => {
+        let pattern = `<li><span>${data.city}</span>, ${data.country} ${data.tmp.toFixed(1)}°C, ${data.description}</li>`;
         parent.append(pattern);
-    }
+      resetBtn.show()
+    };
 
-    $('#add').on('click', function () {
-        gettingJSON(cityField.val());
+    resetForm = () => {
+      currentWeather = {};
+      list.html('');
+      resetBtn.hide()
+    };
+
+    $('#add').on('click', () => {
+      if (cityField.val()) gettingJSON(cityField.val())
     });
-    $('#reset').on('click', function () {
-        currentWeather = {};
-        list.html('')
-    });
+
+    resetBtn.on('click', resetForm);
 }

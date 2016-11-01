@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <title>Title</title>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="node_modules/weather.js/dist/weather.min.js"></script>
 </head>
 <body>
+<div class="wrapper">
     <div>
         <h1>Get the weather!</h1>
     </div>
     <form action="">
-        <input type="text" title="Search" id="cityField">
-        <input type="button" id="add" value="Search">
-        <button type="reset" id="reset">Clear</button>
+        <div class="search-field">
+            <input type="text" title="Search" id="cityField">
+            <input class="btn" type="button" id="add" value="Search">
+        </div>
+        <ul id="list"></ul>
+        <button class="btn" type="reset" id="reset">clear</button>
     </form>
-    <ul id="list"></ul>
+</div>
     <script src="js/main.js"></script>
 </body>
 </html>

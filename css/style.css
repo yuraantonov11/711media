@@ -1,7 +1,66 @@
 body, h1{
-    color: #ffffff;
+    color: #fff;
     margin: 0;
     background-color: #3f51b5;
+    font-size: 24px;
+    font-family: Arial, serif;
+    font-weight: 500;
+    text-align: center;
 }
-.page{
+h1{
+    margin: 115px auto 60px;
 }
+input{
+    font-weight: 500;
+}
+.wrapper{
+    width: 650px;
+    margin: 0 auto;
+}
+.btn{
+    color: #3f51b5;
+    background-color: #fff;
+    border: none;
+}
+.search-field{
+    height: 50px;
+}
+.search-field input{
+    height: 100%;
+    display: block;
+}
+#cityField{
+    background-color: #3f51b5;
+    color: #fff;
+    border: 2px solid #fff;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    width: 80%;
+    float: left;
+    font-size: 18px;
+    padding-left: 15px;
+}
+#add{
+    padding: 0 20px;
+}
+#list{
+    list-style-type: none;
+    text-align: left;
+    padding: 0;
+}
+#list li{
+    font-size: 18px;
+}
+#list li:before{
+    content: '- ';
+    text-indent: -5px;
+}
+#list li span{
+    font-size: 24px;
+}
+#reset{
+    display: none;
+    padding: 10px 15px;
+}
+
